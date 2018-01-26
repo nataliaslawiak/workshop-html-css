@@ -100,16 +100,35 @@ header {
     margin-right: 0;
 }
 
-.nav-right-hover{
-    margin-top:10px;
-    background-color: #000;
-    text-align: left;
-    position: relative;
-    cursor: pointer;
-    padding: 5px 10px;
-    display:none;
+
+.nav-right-hover::before {
+    content: "";
+    display:block;
+    background-color: black;
+    width:15px;
+    height: 15px;
+    position: absolute;
+    left:35px;
+    top:2px;
+    transform: rotate(45deg);
+    z-index: 0;
+}
+
+
+.nav-right-hover {
+    padding-top: 10px;
     clear: both;
+    display: none;
     line-height: 20px;
+    text-align: left;
+    position: absolute;
+    z-index: 1;
+}
+
+.nav-right-hover > ul {
+    display:none;
+    background-color: black;
+    padding: 5px 10px;
 }
 
 .nav-right-hover > ul li{
@@ -117,20 +136,22 @@ header {
     text-transform: none;
     font-weight: 300;
     cursor: pointer;
+    background-color: black;
 }
 
-.nav-list li:first-child:hover .nav-right-hover, .nav-list li:first-child:hover .arrow-up, .nav-list li:first-child:hover .nav-right-hover > ul li {
+.nav-right-hover:hover, .nav-list li:first-child:hover .nav-right-hover, .nav-list li:first-child:hover .nav-right-hover > ul{
     display:block;
 }
 
 .arrow-up {
-    display:block;
+    display:none;
     background-color: black;
     width:12px;
     height: 12px;
     position: absolute;
-    left: calc(50% - 0.4em);
-    top: -0.3em;
+    /*left: calc(50% - 0.4em);*/
+    left: 756px;
+    top: 44px;
     transform: rotate(45deg);
 }
 
